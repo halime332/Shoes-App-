@@ -3,10 +3,14 @@ import Login from "./pages/login";
 import Register from "./pages/register";
 import Main from "./pages/main";
 import Layout from "./components/layout";
+import useUser from "./hooks/useUser";
 
+
+//Sadece oturumu açık olan kullanıcıların girmesine izin ver
 const Protected =({children}:{children:React.ReactNode}) =>{
-  //kullanıcının yetkisi var mı?
-  return true ? <> {children}</> :<Navigate to="/login"/>
+ 
+  const{isAuthenticated} =useUser();
+  return isAuthenticated ? <> {children}</> :<Navigate to="/login"/>
 }
 
 const App = () => {
