@@ -4,6 +4,7 @@ import Register from "./pages/register";
 import Main from "./pages/main";
 import Layout from "./components/layout";
 import useUser from "./hooks/useUser";
+import Detail from "./pages/detail";
 
 
 //Sadece oturumu açık olan kullanıcıların girmesine izin ver
@@ -11,7 +12,7 @@ const Protected =({children}:{children:React.ReactNode}) =>{
  
   const{isAuthenticated} =useUser();
   return isAuthenticated ? <> {children}</> :<Navigate to="/login"/>
-}
+};
 
 const App = () => {
   return (
@@ -26,7 +27,7 @@ const App = () => {
         </Protected>
         }>
         <Route index element={<Main/>}/>
-       
+        <Route path="/shoe/:id" element={<Detail/>}/>
       </Route>
     </Routes>
     </BrowserRouter>
