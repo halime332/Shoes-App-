@@ -33,7 +33,7 @@ api.interceptors.response.use((res)=>res,
     originalRequest._retry=true;
     //refresh enpointine istek atılır ve token yenilenir
     try{
-        const res=await api.post<AuthResponse>("/auth7refresh");
+        const res=await api.post<AuthResponse>("/auth/refresh");
         const {accessToken} =res.data
         localStorage.setItem("accessToken",accessToken);
         //orjinal api isteği tekrardan atılır

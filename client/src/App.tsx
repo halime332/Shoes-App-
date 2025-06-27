@@ -27,7 +27,7 @@ const App = () => {
         </Protected>
         }>
         <Route index element={<Main/>}/>
-        <Route path="/shoe/:id" element={<Detail/>}/>
+        <Route path="/shoes/:id" element={<Detail/>}/>
       </Route>
     </Routes>
     </BrowserRouter>
