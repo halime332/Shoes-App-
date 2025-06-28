@@ -1,17 +1,16 @@
-import type { FC } from "react"
-import type { Shoe } from "../../types";
-
-interface Props{
-  item:Shoe;
-};
-
-const Images:FC<Props> = ({item}) => {
+import type { FC } from "react";
+const Images: FC<{ item: any }> = ({ item }) => {
   return (
-    <div className="grid grid-cols-2 gap-4 rounded-[48px] h-fit">
-      {item.picture.map((url,key)=>(
-      <img key={key} src={url}/>))}
+    <div className="flex gap-4">
+      {item.picture.map((pic: string, i: number) => (
+        <img
+          key={i}
+          src={`http://localhost:5000/${pic}`}
+          alt={`shoe ${i}`}
+          className="w-40 h-40 object-cover rounded"
+        />
+      ))}
     </div>
-  )
+  );
 };
-
 export default Images;
