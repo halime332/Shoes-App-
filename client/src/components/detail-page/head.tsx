@@ -1,10 +1,17 @@
 import type { FC } from "react";
+import Badge from "../card/badge";
+import type { Shoe } from "../../types";
 
 
-const Head:FC = () => {
+interface Props{
+  item:Shoe;
+}
+
+const Head:FC = ({item}) => {
   return (
     <div>
-      Head
+     <Badge item={item}/>
+     <h1>{data.name}</h1>
     </div>
   )
 };
