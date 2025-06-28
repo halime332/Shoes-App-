@@ -3,7 +3,7 @@ import type { Shoe } from "../../types"
 
 
 interface Props {
-    item:Shoe;
+  item:Shoe;
 }
 
 const Color:FC<Props> = ({item}) => {

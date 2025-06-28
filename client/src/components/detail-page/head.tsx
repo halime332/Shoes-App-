@@ -7,11 +7,11 @@ interface Props{
   item:Shoe;
 }
 
-const Head:FC = ({item}) => {
+const Head:FC<Props> = ({item}) => {
   return (
     <div>
      <Badge item={item}/>
-     <h1>{data.name}</h1>
+     <h1>{item.name}</h1>
     </div>
   )
 };
