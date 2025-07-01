@@ -27,7 +27,7 @@ const Color:FC<Props> = ({item}) => {
               //ekrana basıla rengin kodunu bul
              const isSelected =selected===id;
              return (
-              <div className={isSelected ? "ring-3 ring-my-blue rounded-full":""}>
+              <div className={isSelected ? "ring-3 ring-my-blue rounded-full" : ""}>
                 <div onClick={()=>toogle(id)} className="mt-1 size-9 rounded-full 
                 cursor-pointer" style={{background:color?.code}}/>
               </div>

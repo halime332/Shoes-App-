@@ -52,9 +52,12 @@ const UserInfo:FC = () => {
             {user?.firstName} {user?.lastName}
           </button>
 
-         <Link to="/Admin" className=" p-3 px-6 hover:bg-gray-300/30
-          w-full border-b border-zinc-200 ">Admin Paneli</Link>
-
+         {user?.role === "admin" && 
+         (<Link to="/admin" className=" p-3 px-6 hover:bg-gray-300/30
+          w-full border-b border-zinc-200 ">
+            Admin Paneli
+         </Link>)
+         }
          <button onClick={()=>logout.mutate()}
           className="p-3 px-6 hover:bg-gray-300/30 text-start
            cursor-pointer">Çıkış Yap</button>
