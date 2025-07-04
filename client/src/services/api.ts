@@ -1,10 +1,10 @@
 import axios from "axios";
-import type { AuthResponse, LoginData, RegisterData, User ,Shoe} from "../types";
+import type { AuthResponse, LoginData, RegisterData, User ,Shoe, ShoeData} from "../types";
 
 
 //axios özelleştirme
 const api =axios.create({
-    baseURL:"http://localhost:5000/api",
+    baseURL:"http://localhost:5001/api",
     withCredentials:true,
 });
 
@@ -64,4 +64,7 @@ export const authApi={
 export const shoesApi = {
     getAll :() =>api.get<Shoe[]>("/shoes"),
     getById:(id:string)=>api.get<Shoe>(`/shoes/${id}`),
+    create:(data:ShoeData) =>api.post<Shoe>("/shoe",data),
+    edit:(id:string,data:ShoeData) =>api.put<Shoe>(`/shoe/${id}`,data),
+    delete:(id:string) =>api.delete(`/shoe/${id}`),
 };

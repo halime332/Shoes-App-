@@ -4,11 +4,13 @@ import type { Shoe } from "../../types";
 import { Link } from "react-router-dom";
 import Price from "./price";
 import Badge from "./badge";
+
 interface Props {
   item: Shoe;
 }
 const Card: FC<Props> = ({ item }) => {
   const [imageError, setImageError] = useState(false);
+  
   // Eğer görsel yüklenemiyorsa kartı gösterme
   if (imageError || !item.picture?.[0]?.trim()) return null;
   return (

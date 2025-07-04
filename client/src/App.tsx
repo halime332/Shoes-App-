@@ -5,6 +5,9 @@ import Main from "./pages/main";
 import Detail from "./pages/detail";
 import Dashboard from "./pages/dashboard";
 import Protected from "./components/protected";
+import Create from "./pages/create";
+import Edit from "./pages/edit";
+
 
 
 //Sadece oturumu açık olan kullanıcıların girmesine izin ver
@@ -23,12 +26,13 @@ const App = () => {
         }>
         <Route index element={<Main/>}/>
         <Route path="/shoes/:id" element={<Detail/>}/>
-        <Route path="/admin" element={<Dashboard/>}/>
       </Route>
       
       {/*sadece rolü admin olan kullanıcılar girer */}
       <Route path="/admin" element={<Protected allowedRole="admin"/>}>
          <Route index element={<Dashboard/>}/>
+         <Route path="create" element={<Create/>}/>
+         <Route path="edit/id" element={<Edit/>}/>
       </Route>
     </Routes>
     </BrowserRouter>

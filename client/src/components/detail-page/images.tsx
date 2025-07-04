@@ -5,7 +5,7 @@ const Images: FC<{ item: any }> = ({ item }) => {
       {item.picture.map((pic: string, i: number) => (
         <img
           key={i}
-          src={`http://localhost:5000/${pic}`}
+          src={`http://localhost:5001/${pic}`}
           alt={`shoe ${i}`}
           className="w-40 h-40 object-cover rounded"
         />
