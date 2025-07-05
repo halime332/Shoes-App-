@@ -32,7 +32,7 @@ const App = () => {
       <Route path="/admin" element={<Protected allowedRole="admin"/>}>
          <Route index element={<Dashboard/>}/>
          <Route path="create" element={<Create/>}/>
-         <Route path="edit/id" element={<Edit/>}/>
+         <Route path="edit/:id" element={<Edit/>}/>
       </Route>
     </Routes>
     </BrowserRouter>

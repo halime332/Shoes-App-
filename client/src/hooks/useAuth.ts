@@ -33,8 +33,10 @@ export default function useAuth() {
         },
     });
 
-    return {login,
+    return {
+        login,
         register,
         logout ,
-        isAuthenticated:!!localStorage.getItem("accessToken")};
+        isAuthenticated:!!localStorage.getItem("accessToken")
+    };
 }

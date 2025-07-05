@@ -4,9 +4,11 @@ import type { Shoe, ShoeData } from "../../types";
 
 
 interface  Props {
-    handleAction:(data:ShoeData) => void;
-    shoeData?:Shoe;
+  handleAction:(data:ShoeData) => void;
+  shoeData?:Shoe;
 }
+
+ type ShoeFormData = Omit<ShoeData, "isNew"> & {isNew?:"on" | boolean};
 
 const Form:FC<Props>= ({handleAction,shoeData}) => {
 
@@ -16,6 +18,9 @@ const Form:FC<Props>= ({handleAction,shoeData}) => {
     const formData = new FormData(e.currentTarget);
     const shoeData=Object.fromEntries(formData.entries());
 
+    let shoe =shoeData as unknown as ShoeFormData;
+    shoe.isNew =shoe.isNew === "on";
+    
     handleAction(shoeData as unknown as ShoeData);
   };
 
@@ -51,7 +56,7 @@ const Form:FC<Props>= ({handleAction,shoeData}) => {
           <label htmlFor="women" className="ms-2 text-sm font-medium text-gray-900 ">Kadın</label>
         </div>
 
-     <button className="bg-my-blue py-1 px-4 rounded-md text-white transition hover:bg-my-blue/8 cursor-pointer">Oluştur</button>
+     <button className="bg-my-blue py-1 px-4 rounded-md text-white transition hover:bg-my-blue/8 cursor-pointer">{shoeData ? "Kaydet" :"Oluştur"}</button>
     </form>
   )
 }

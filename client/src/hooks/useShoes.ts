@@ -23,7 +23,7 @@ export function useShoes (){
             //oluşturma işlemi başarılı olursa ekrandaki verilerin güncellernmesi
             //için shoes keyine sahip ayakkabı verilerini getiren query fonksiyonunu
             //tetikliyoruz
-            queryClient.invalidateQueries({queryKey:["shoes"]})
+            queryClient.invalidateQueries({queryKey:["shoes"]});
             alert("Oluşturuldu");
         },
     });
@@ -32,17 +32,17 @@ export function useShoes (){
       useMutation({
         mutationFn:({id,data}:{id:string;data:ShoeData}) =>shoesApi.edit(id,data),
         onSuccess:() =>{
-             queryClient.invalidateQueries({queryKey:["shoes"]})
+             queryClient.invalidateQueries({queryKey:["shoes"]});
             alert("Düzenledi");
         },
     });
 
 
-    const remove= (id:string ) =>
+    const remove=
       useMutation({
-        mutationFn:() =>shoesApi.delete(id),
+        mutationFn:(id:string) =>shoesApi.delete(id),
         onSuccess:() =>{
-             queryClient.invalidateQueries({queryKey:["shoes"]})
+             queryClient.invalidateQueries({queryKey:["shoes"]});
             alert("Kaldırıldı");
         },
     });

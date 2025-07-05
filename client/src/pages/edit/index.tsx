@@ -13,7 +13,7 @@ const Edit:FC = () => {
     const {shoe,edit}=useShoes();
     const {isLoading,data}=shoe(id as string);
 
-    const handleAction =() =>{
+    const handleAction =(data:ShoeData) =>{
       edit.mutate({id,data} as {id:string; data:ShoeData});
       navigate("/admin");
     };

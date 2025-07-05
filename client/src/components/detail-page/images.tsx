@@ -1,4 +1,6 @@
 import type { FC } from "react";
+
+
 const Images: FC<{ item: any }> = ({ item }) => {
   return (
     <div className="flex gap-4">

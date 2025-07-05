@@ -21,7 +21,7 @@ const Detail:FC = () => {
   if(shoeQuery.isLoading) return <Loader/>
   if(shoeQuery.isError) return <Error message={shoeQuery.error.message} refetch={shoeQuery.refetch}/>;
 
-  console.log("Shoe query error", shoeQuery.error);
+
 
 
   return(

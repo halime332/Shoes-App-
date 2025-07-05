@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 
 const Dashboard:FC= () => {
-  const {shoes}= useShoes();
+  const {shoes,remove}= useShoes();
 
   if(shoes.isLoading) return <Loader/>
 
@@ -14,7 +14,7 @@ const Dashboard:FC= () => {
   if(shoes.isError) return <Error message={shoes.error.message}
   refetch={shoes.refetch}/>
 
-  console.log(shoes.data);
+  
   return (
     <div >
       <div className="flex justify-between mb-5">
@@ -63,7 +63,7 @@ const Dashboard:FC= () => {
                 <td className="px-6 py-4">{item.discount > 0 ? `${item.discount}%` : "Yok"}</td>
                 <td className="px-6 py-4">
                     <Link to={`/admin/edit/${item._id}`}  className="font-medium text-blue-600 dark:text-red-500 hover:underline pe-3 cursor-pointer">Düzenle</Link>
-                     <button  className="font-medium text-red-600 dark:text-red-500 hover:underline pe-3 cursor-pointer">Sil</button>
+                     <button onClick={()=>remove.mutate(item._id)} className="font-medium text-red-600 dark:text-red-500 hover:underline pe-3 cursor-pointer">Sil</button>
                 </td>
             </tr> )}
             

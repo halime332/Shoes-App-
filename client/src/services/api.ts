@@ -29,7 +29,7 @@ api.interceptors.response.use((res)=>res,
     //cevap olumsuzsa  bu fonksiyon çalışır 
     const originalRequest =err.config;
     // hata sebebi token kaykaklıysa bu if çalışır
-  if(err.response.status===401 && !originalRequest._retry){
+  if(err?.response?.status===401 && !originalRequest._retry){
     originalRequest._retry=true;
     //refresh enpointine istek atılır ve token yenilenir
     try{
@@ -42,8 +42,8 @@ api.interceptors.response.use((res)=>res,
         //access token yenilenmezse demekki refreh token ın süresi
         //dolmuştur o zaman sistemden atarız kişiyi ve tekrar girriş yapmasını isteriz
         localStorage.removeItem("accessToken");
-        window.location.href="/login"
-        return Promise.reject(error)
+        window.location.href="/login";
+        return Promise.reject(error);
     }
   }  
  }
@@ -64,7 +64,7 @@ export const authApi={
 export const shoesApi = {
     getAll :() =>api.get<Shoe[]>("/shoes"),
     getById:(id:string)=>api.get<Shoe>(`/shoes/${id}`),
-    create:(data:ShoeData) =>api.post<Shoe>("/shoe",data),
-    edit:(id:string,data:ShoeData) =>api.put<Shoe>(`/shoe/${id}`,data),
-    delete:(id:string) =>api.delete(`/shoe/${id}`),
+    create:(data:ShoeData) =>api.post<Shoe>("/shoes",data),
+    edit:(id:string,data:ShoeData) =>api.put<Shoe>(`/shoes/${id}`,data),
+    delete:(id:string) =>api.delete(`/shoes/${id}`),
 };
