@@ -1,15 +1,15 @@
 import type { FC } from "react";
+import type { Shoe } from "../../types";
 
-
-const Images: FC<{ item: any }> = ({ item }) => {
+interface Props {
+  item:Shoe;
+}
+const Images: FC<Props> =({item}) =>{
   return (
-    <div className="flex gap-4">
-      {item.picture.map((pic: string, i: number) => (
+    <div className="grid grid-cols-2 gap-4 rounded-[48px] h-fit">
+      {item.picture.map((url,key) => (
         <img
-          key={i}
-          src={`http://localhost:5001/${pic}`}
-          alt={`shoe ${i}`}
-          className="w-40 h-40 object-cover rounded"
+         key={key} src={url}
         />
       ))}
     </div>
