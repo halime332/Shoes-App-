@@ -24,20 +24,19 @@ const Detail:FC = () => {
 
 
 
-  return(
-   <div className="mt-8 grid md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-4" >
-      <div  className="xl:col-span-2">
-        <Images item={shoeQuery.data!} />
+  return (
+    <div className=" mt-8 grid md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-4">
+      <div className=" xl:col-span-2 ">
+        <Images  item={shoeQuery.data!} />
       </div>
 
-      <div className="flex flex-col gap-8">
-        <Head item={shoeQuery.data!}/>
-        <Color item={shoeQuery.data!}/>
-        <Size item={shoeQuery.data!}/>
-        <Foot item={shoeQuery.data!}/>
+      <div className="flex flex-col gap-8 ">
+        <Head item={shoeQuery.data!} />
+        <Color item={shoeQuery.data!} />
+        <Size item={shoeQuery.data!} />
+        <Foot item={shoeQuery.data!} />
       </div>
     </div>
-  
   );
 };
 

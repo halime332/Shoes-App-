@@ -26,8 +26,8 @@ const Dashboard:FC= () => {
       </div>
 
      <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-     <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+     <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
+        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 ">
             <tr>
                 <th scope="col" className="px-16 py-3">
                     <span className="sr-only">Image</span>
@@ -47,9 +47,11 @@ const Dashboard:FC= () => {
             </tr>
         </thead>
         <tbody>
-          {shoes.data?.map((item) => <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+          {shoes.data?.map((item) => 
+          <tr className="bg-white border-b border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <td className="p-4">
-                    <img src={item.picture[0]} className="w-16 md:w-28 max-w-full max-h-full rounded-xl"
+                    <img src={item.picture[0]}
+                     className="w-16 md:w-28 max-w-full max-h-full rounded-xl"
                      alt={item.name}/>
                 </td>
                 
@@ -63,7 +65,8 @@ const Dashboard:FC= () => {
                 <td className="px-6 py-4">{item.discount > 0 ? `${item.discount}%` : "Yok"}</td>
                 <td className="px-6 py-4">
                     <Link to={`/admin/edit/${item._id}`}  className="font-medium text-blue-600 dark:text-red-500 hover:underline pe-3 cursor-pointer">Düzenle</Link>
-                     <button onClick={()=>remove.mutate(item._id)} className="font-medium text-red-600 dark:text-red-500 hover:underline pe-3 cursor-pointer">Sil</button>
+                     <button onClick={()=>remove.mutate(item._id)} 
+                     className="font-medium text-red-600 dark:text-red-500 hover:underline pe-3 cursor-pointer">Sil</button>
                 </td>
             </tr> )}
             

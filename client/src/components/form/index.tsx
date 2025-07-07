@@ -33,7 +33,7 @@ const Form:FC<Props>= ({handleAction,shoeData}) => {
       <Input label="Boyutlar" name="size" type="string" defaultValue={shoeData?.size}/>
 
         <div>
-          <label htmlFor="description" className="ms-2 text-sm font-medium text-gray-900 ">Açıklama</label>
+          <label htmlFor="description" className="blok ms-2 text-sm font-medium text-gray-900 ">Açıklama</label>
           <textarea id="description" name="description" defaultValue={shoeData?.description} className="mt-2 block  p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border min-h-[100px] border-gray-300 focus:ring-blue-500 focus:border-blue-500"></textarea>
         </div>
         

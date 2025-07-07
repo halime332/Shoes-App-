@@ -18,7 +18,7 @@ const Hero:FC = () => {
         </p>
       </div>
        
-      <img src="/banner.png" alt="banner" className="max-md:h-[170px]" />
+      <img src="/banner.png" alt="banner" className="max-md:min-h-[170px]" />
       
       
     </div>

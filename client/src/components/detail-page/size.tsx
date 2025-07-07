@@ -11,7 +11,7 @@ interface Props {
 const Size:FC<Props> = ({item}) => {
   const [selected,setSelected] = useState<string>("");
 
-  const toogle =(size:string)=>{
+  const toogle =(size:string) => {
     setSelected(selected===size? "":size);
   };
   return (
