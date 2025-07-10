@@ -6,7 +6,7 @@ interface Props {
 }
 const Images: FC<Props> =({item}) =>{
   return (
-    <div className="grid grid-cols-2 gap-4 rounded-[48px] h-fit">
+    <div className="grid grid-cols-2 gap-4 rounded-[48px] h-fit items-end justify-items-end">
       {item.picture.map((url,key) => (
         <img
          key={key} src={url}

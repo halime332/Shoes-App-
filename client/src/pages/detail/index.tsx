@@ -25,12 +25,12 @@ const Detail:FC = () => {
 
 
   return (
-    <div className=" mt-8 grid md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-4">
-      <div className=" xl:col-span-2 ">
+    <div className="mt-8 max-w-6xl mx-auto grid md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-3">
+      <div className=" xl:col-span-2 xl:col-span-2 flex justify-center">
         <Images  item={shoeQuery.data!} />
       </div>
 
-      <div className="flex flex-col gap-8 ">
+      <div className="flex flex-col gap-8 flex flex-col gap-6 justify-center">
         <Head item={shoeQuery.data!} />
         <Color item={shoeQuery.data!} />
         <Size item={shoeQuery.data!} />
